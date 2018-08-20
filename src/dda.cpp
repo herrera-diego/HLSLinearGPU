@@ -34,6 +34,7 @@ dda::dda(sc_core::sc_module_name module_name, int x0, int y0, int x1, int y1)
 
 void dda::line()
 {
+    cout << "DDA Start" <<endl;
     int dx = X1 - X0;
     int dy = Y1 - Y0;
  
@@ -47,9 +48,13 @@ void dda::line()
     // Put pixel for each step
     float X = X0;
     float Y = Y0;
+    float Xp = X;
+    float Yp = Y;
     for (int i = 0; i <= steps; i++)
     {
-        std::cout << X <<","<<Y<<endl;
+        Xp = round(X);
+        Yp = round(Y);
+        std::cout << Xp <<","<<Yp<<endl;
         //putpixel (X,Y,RED);  // put pixel at (X,Y)
         X += Xinc;           // increment in x at each step
         Y += Yinc;           // increment in y at each step

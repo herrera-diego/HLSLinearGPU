@@ -17,15 +17,21 @@
 
 #include "systemc.h"
 #include "dda.h"
+#include "bresenham.h"
+#include "midpoint.h"
 
 SC_MODULE(Top)
 {
     dda *line1;
+    bresenham *line2;
+    midpoint *line3;
 
     SC_CTOR(Top)
     {
         std::cout <<"Test"<<endl;
         line1 = new dda("line1",0,5,8,6);
+        line2 = new bresenham("line2",0,5,8,6);
+        line3 = new midpoint("line3",0,5,8,6);
     }
 };   
 #endif //__TOP_H__
