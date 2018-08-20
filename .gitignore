@@ -1,0 +1,4 @@
+top.o
+debug.o
+dda.o
+tb_top.o
