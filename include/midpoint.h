@@ -24,15 +24,19 @@ class midpoint: public sc_module
         // This should be used instead of SC_CTOR to enable a custom constructor
         SC_HAS_PROCESS(midpoint);
 
-        midpoint(sc_core::sc_module_name module_name, int x0, int y0, int x1, int y1);
+        midpoint(sc_core::sc_module_name module_name);
 
-        void line();
         void tracing(sc_trace_file *tf);
+        void line();
+        void startDrawing();
 
-        int     X0;
-        int     Y0;
-        int     X1;
-        int     Y1;
+        bool            start;
+
+        sc_in_clk              clk;
+        sc_in<int>             X0;
+        sc_in<int>             Y0;
+        sc_in<int>             X1;
+        sc_in<int>             Y1;
 
         int     PX;
         int     PY;

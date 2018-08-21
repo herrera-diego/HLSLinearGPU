@@ -1,0 +1,44 @@
+[*]
+[*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
+[*] Tue Aug 21 04:03:07 2018
+[*]
+[dumpfile] "/home/diego/Code/HLSLinearGPU/tb_top.vcd"
+[dumpfile_mtime] "Tue Aug 21 04:00:59 2018"
+[dumpfile_size] 4996
+[savefile] "/home/diego/Code/HLSLinearGPU/top.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*0.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] SystemC.
+[treeopen] SystemC.Top.
+[sst_width] 223
+[signals_width] 102
+[sst_expanded] 1
+[sst_vpaned_height] 152
+@200
+-Top
+@22
+SystemC.Top.X0[31:0]
+SystemC.Top.X1[31:0]
+SystemC.Top.Y0[31:0]
+SystemC.Top.Y1[31:0]
+@28
+SystemC.Top.clk
+@200
+-DDA
+@22
+SystemC.Top.line1.PX[31:0]
+SystemC.Top.line1.PY[31:0]
+@200
+-Bresenham
+@22
+SystemC.Top.line2.PX[31:0]
+SystemC.Top.line2.PY[31:0]
+@200
+-Midpoint
+@22
+SystemC.Top.line3.PX[31:0]
+SystemC.Top.line3.PY[31:0]
+[pattern_trace] 1
+[pattern_trace] 0

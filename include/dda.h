@@ -24,21 +24,24 @@ class dda: public sc_module
         // This should be used instead of SC_CTOR to enable a custom constructor
         SC_HAS_PROCESS(dda);
 
-        
-
-        dda(sc_core::sc_module_name module_name, int x0, int x1, int y0, int y1);
+        dda(sc_core::sc_module_name module_name);
 
         void line();
+        void startDrawing();
         void tracing(sc_trace_file *tf);
         int abs (int n);
 
-        int     X0;
-        int     Y0;
-        int     X1;
-        int     Y1;
+        bool            start;
 
-        int     PX;
-        int     PY;
+        sc_in<int>             X0;
+        sc_in<int>             Y0;
+        sc_in<int>             X1;
+        sc_in<int>             Y1;
+
+        int             PX;
+        int             PY;
+
+        sc_in_clk       clk;
 };
 
 #endif //__DDA__

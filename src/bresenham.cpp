@@ -18,39 +18,52 @@
 
 // Generate a random delay (with power-law distribution) to aid testing and stress the protocol
 
-bresenham::bresenham(sc_core::sc_module_name module_name, int x0, int y0, int x1, int y1)
-    : sc_module(module_name), X0(x0), X1(x1), Y0(y0), Y1(y1)
+bresenham::bresenham(sc_core::sc_module_name module_name)
+    : sc_module(module_name)
 {
-    
-    std::cout<<"Bresenham"<<endl;
-    std::cout<<"X0:"<<X0;
-    std::cout<<" Y0:"<<Y0;
-    std::cout<<" X1:"<<X1;
-    std::cout<<" Y1:"<<Y1<<endl;
-    SC_METHOD(line);
-        //sensitive << clock_signal.posedge_event();
-    
+    start = true;
+    SC_THREAD(line);
+        sensitive << clk;
+    SC_METHOD(startDrawing);
+        sensitive<<X0;
+        sensitive<<Y0;
+        sensitive<<X1;
+        sensitive<<Y1;
+}
+
+void bresenham::startDrawing()
+{
+    start = true;
 }
 
 void bresenham::line()
 {
-    cout << "Bresenham Start" <<endl;
-    int m_new = 2 * (Y1 - Y0);
-    int slope_error_new = m_new - (X1 - X0);
-    for (int x = X0, y = Y0; x <= X1; x++)
+    while(true)
     {
-        PX = x;
-        PY = y;
-        cout << PX << "," << PY <<endl;
-        // Add slope to increment angle formed
-        slope_error_new += m_new;
-
-        // Slope error reached limit, time to
-        // increment y and update slope error.
-        if (slope_error_new >= 0)
+        wait();
+        if(start)
         {
-            y++;
-            slope_error_new  -= 2 * (X1 - X0);
+            cout << "Bresenham Start" <<endl;
+            int m_new = 2 * (Y1 - Y0);
+            int slope_error_new = m_new - (X1 - X0);
+            for (int x = X0, y = Y0; x <= X1; x++)
+            {
+                wait();
+                PX = x;
+                PY = y;
+                cout << PX << "," << PY <<endl;
+                // Add slope to increment angle formed
+                slope_error_new += m_new;
+
+                // Slope error reached limit, time to
+                // increment y and update slope error.
+                if (slope_error_new >= 0)
+                {
+                    y++;
+                    slope_error_new  -= 2 * (X1 - X0);
+                }
+            }
+            start = false;
         }
     }
 }
@@ -62,6 +75,7 @@ void bresenham::tracing(sc_trace_file *tf)
     const std::string str = this->name();
     
     // Dump local signals
+    sc_trace(tf, this->clk, str+".clk");
     sc_trace(tf, this->X0, str+".X0");
     sc_trace(tf, this->Y0, str+".Y0");
     sc_trace(tf, this->X1, str+".X1");

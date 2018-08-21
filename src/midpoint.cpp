@@ -18,57 +18,73 @@
 
 // Generate a random delay (with power-law distribution) to aid testing and stress the protocol
 
-midpoint::midpoint(sc_core::sc_module_name module_name, int x0, int y0, int x1, int y1)
-    : sc_module(module_name), X0(x0), X1(x1), Y0(y0), Y1(y1)
+midpoint::midpoint(sc_core::sc_module_name module_name)
+    : sc_module(module_name)
 {
-    
-    std::cout<<"MID POINT"<<endl;
-    std::cout<<"X0:"<<X0;
-    std::cout<<" Y0:"<<Y0;
-    std::cout<<" X1:"<<X1;
-    std::cout<<" Y1:"<<Y1<<endl;
-    SC_METHOD(line);
-        //sensitive << clock_signal.posedge_event();
+    start = true;
+    SC_THREAD(line);
+        sensitive << clk;
+    SC_METHOD(startDrawing);
+        sensitive<<X0;
+        sensitive<<Y0;
+        sensitive<<X1;
+        sensitive<<Y1;
     
 }
 
+void midpoint::startDrawing()
+{
+    start = true;
+}
+
+
 void midpoint::line()
 {
-    cout << "Mid Point Start" <<endl;
-    int dx = X1 - X0;
-    int dy = Y1 - Y0;
- 
-    // initial value of decision parameter d
-    int d = dy - (dx/2);
-    int x = X0, y = Y0;
- 
-    // Plot initial given point
-    // putpixel(x,y) can be used to print pixel
-    // of line in graphics
-    cout << x << "," << y << "\n";
- 
-    // iterate through value of X
-    while (x < X1)
+    while(true)
     {
-        x++;
- 
-        // E or East is chosen
-        if (d < 0)
-            d = d + dy;
- 
-        // NE or North East is chosen
-        else
+        wait();
+        if(start)
         {
-            d += (dy - dx);
-            y++;
+            cout << "Mid Point Start" <<endl;
+            int dx = X1 - X0;
+            int dy = Y1 - Y0;
+        
+            // initial value of decision parameter d
+            int d = dy - (dx/2);
+            int x = X0, y = Y0;
+        
+            // Plot initial given point
+            // putpixel(x,y) can be used to print pixel
+            // of line in graphics
+            cout << x << "," << y << "\n";
+        
+            // iterate through value of X
+            while (x < X1)
+            {
+                wait();
+
+                x++;
+        
+                // E or East is chosen
+                if (d < 0)
+                    d = d + dy;
+        
+                // NE or North East is chosen
+                else
+                {
+                    d += (dy - dx);
+                    y++;
+                }
+        
+                // Plot intermediate points
+                // putpixel(x,y) is used to print pixel
+                // of line in graphics
+                PX = x;
+                PY = y;
+                cout << PX << "," << PY << endl;
+            }
+            start =false;
         }
- 
-        // Plot intermediate points
-        // putpixel(x,y) is used to print pixel
-        // of line in graphics
-        PX = x;
-        PY = y;
-        cout << PX << "," << PY << endl;
     }
 }
 
@@ -78,6 +94,7 @@ void midpoint::tracing(sc_trace_file *tf)
     const std::string str = this->name();
     
     // Dump local signals
+    sc_trace(tf, this->clk, str+".clk");
     sc_trace(tf, this->X0, str+".X0");
     sc_trace(tf, this->Y0, str+".Y0");
     sc_trace(tf, this->X1, str+".X1");

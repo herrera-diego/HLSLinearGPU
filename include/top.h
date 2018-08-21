@@ -22,23 +22,52 @@
 
 SC_MODULE(Top)
 {
-    dda *line1;
-    bresenham *line2;
-    midpoint *line3;
+    dda         line1{"line1"};
+    bresenham   line2{"line2"};
+    midpoint    line3{"line3"};
+
+    sc_in_clk   clk;
+    sc_in<int>  X0;
+    sc_in<int>  Y0;
+    sc_in<int>  X1;
+    sc_in<int>  Y1;
 
     void tracing(sc_trace_file *tf)
     {
-        line1->tracing(tf);
-        line2->tracing(tf);
-        line3->tracing(tf);
+        cout << "[VCD]" << "Add Top Signals to .VCD\n" << endl;
+        const std::string str = this->name();
+    
+        // Dump local signals
+        sc_trace(tf, this->clk, str+".clk");
+        sc_trace(tf, this->X0, str+".X0");
+        sc_trace(tf, this->Y0, str+".Y0");
+        sc_trace(tf, this->X1, str+".X1");
+        sc_trace(tf, this->Y1, str+".Y1");
+        line1.tracing(tf);
+        line2.tracing(tf);
+        line3.tracing(tf);
     }
 
     SC_CTOR(Top)
     {
-        std::cout <<"Test"<<endl;
-        line1 = new dda("line1",0,5,8,6);
-        line2 = new bresenham("line2",0,5,8,6);
-        line3 = new midpoint("line3",0,5,8,6);
+        std::cout <<"Top"<<endl;
+        line1.clk(clk);
+        line1.X0(X0);
+        line1.Y0(Y0);
+        line1.X1(X1);
+        line1.Y1(Y1);
+
+        line2.clk(clk);
+        line2.X0(X0);
+        line2.Y0(Y0);
+        line2.X1(X1);
+        line2.Y1(Y1);
+
+        line3.clk(clk);
+        line3.X0(X0);
+        line3.Y0(Y0);
+        line3.X1(X1);
+        line3.Y1(Y1);
     }
 };   
 #endif //__TOP_H__
