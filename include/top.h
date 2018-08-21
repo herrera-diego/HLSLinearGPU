@@ -26,6 +26,13 @@ SC_MODULE(Top)
     bresenham *line2;
     midpoint *line3;
 
+    void tracing(sc_trace_file *tf)
+    {
+        line1->tracing(tf);
+        line2->tracing(tf);
+        line3->tracing(tf);
+    }
+
     SC_CTOR(Top)
     {
         std::cout <<"Test"<<endl;

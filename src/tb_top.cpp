@@ -16,7 +16,18 @@
 
 int sc_main(int argc, char* argv[])   
 {
+    sc_trace_file *tf = sc_create_vcd_trace_file("tb_top");
+    tf->set_time_unit(1, SC_NS);
     Top top("top");
-    sc_start();
+    top.tracing(tf);
+    
+    sc_start(0,SC_NS);
+
+    cout << "@" << sc_time_stamp()<< endl;
+    
+    sc_start(1000,SC_NS); 
+
+    cout << "@" << sc_time_stamp()<< endl;
+
     return 0;
 }

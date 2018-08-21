@@ -66,8 +66,23 @@ void midpoint::line()
         // Plot intermediate points
         // putpixel(x,y) is used to print pixel
         // of line in graphics
-        cout << x << "," << y << "\n";
+        PX = x;
+        PY = y;
+        cout << PX << "," << PY << endl;
     }
 }
 
+void midpoint::tracing(sc_trace_file *tf)
+{
+    cout << "[VCD]" << "Add midpoint Signals to .VCD\n" << endl;
+    const std::string str = this->name();
+    
+    // Dump local signals
+    sc_trace(tf, this->X0, str+".X0");
+    sc_trace(tf, this->Y0, str+".Y0");
+    sc_trace(tf, this->X1, str+".X1");
+    sc_trace(tf, this->Y1, str+".Y1");
+    sc_trace(tf, this->PX, str+".PX");
+    sc_trace(tf, this->PY, str+".PY");
+}
  

@@ -29,12 +29,16 @@ class dda: public sc_module
         dda(sc_core::sc_module_name module_name, int x0, int x1, int y0, int y1);
 
         void line();
+        void tracing(sc_trace_file *tf);
         int abs (int n);
 
         int     X0;
         int     Y0;
         int     X1;
         int     Y1;
+
+        int     PX;
+        int     PY;
 };
 
 #endif //__DDA__

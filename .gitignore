@@ -4,3 +4,4 @@ dda.o
 tb_top.o
 bresenham.o
 midpoint.o
+tb_top.vcd

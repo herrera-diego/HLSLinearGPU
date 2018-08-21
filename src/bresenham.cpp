@@ -39,7 +39,9 @@ void bresenham::line()
     int slope_error_new = m_new - (X1 - X0);
     for (int x = X0, y = Y0; x <= X1; x++)
     {
-        cout << x << "," << y <<endl;
+        PX = x;
+        PY = y;
+        cout << PX << "," << PY <<endl;
         // Add slope to increment angle formed
         slope_error_new += m_new;
 
@@ -54,3 +56,16 @@ void bresenham::line()
 }
 
  
+void bresenham::tracing(sc_trace_file *tf)
+{
+    cout << "[VCD]" << "Add bresenham Signals to .VCD\n" << endl;
+    const std::string str = this->name();
+    
+    // Dump local signals
+    sc_trace(tf, this->X0, str+".X0");
+    sc_trace(tf, this->Y0, str+".Y0");
+    sc_trace(tf, this->X1, str+".X1");
+    sc_trace(tf, this->Y1, str+".Y1");
+    sc_trace(tf, this->PX, str+".PX");
+    sc_trace(tf, this->PY, str+".PY");
+}

@@ -48,13 +48,13 @@ void dda::line()
     // Put pixel for each step
     float X = X0;
     float Y = Y0;
-    float Xp = X;
-    float Yp = Y;
+    //float Xp = X;
+    //float Yp = Y;
     for (int i = 0; i <= steps; i++)
     {
-        Xp = round(X);
-        Yp = round(Y);
-        std::cout << Xp <<","<<Yp<<endl;
+        PX = round(X);
+        PY = round(Y);
+        std::cout << PX <<","<< PY <<endl;
         //putpixel (X,Y,RED);  // put pixel at (X,Y)
         X += Xinc;           // increment in x at each step
         Y += Yinc;           // increment in y at each step
@@ -69,3 +69,16 @@ int dda::abs (int n)
     return ( (n>0) ? n : ( n * (-1)));
 }
  
+void dda::tracing(sc_trace_file *tf)
+{
+    cout << "[VCD]" << "Add dda Signals to .VCD\n" << endl;
+    const std::string str = this->name();
+    
+    // Dump local signals
+    sc_trace(tf, this->X0, str+".X0");
+    sc_trace(tf, this->Y0, str+".Y0");
+    sc_trace(tf, this->X1, str+".X1");
+    sc_trace(tf, this->Y1, str+".Y1");
+    sc_trace(tf, this->PX, str+".PX");
+    sc_trace(tf, this->PY, str+".PY");
+}
