@@ -1,0 +1,54 @@
+INFO: [HLS 200-10] Running '/opt/Xilinx/Vivado/2018.2/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'herreral' on host 'diego-mate' (Linux_x86_64 version 4.15.0-30-generic) on Wed Aug 22 07:49:59 CST 2018
+INFO: [HLS 200-10] On os Ubuntu 18.04.1 LTS
+INFO: [HLS 200-10] In directory '/home/herreral/Code/SystemC/HLSLinearGPU/HLS/midpoint'
+INFO: [HLS 200-10] Opening project '/home/herreral/Code/SystemC/HLSLinearGPU/HLS/midpoint/midpoint'.
+INFO: [HLS 200-10] Adding design file '../../Cpp/src/midpoint.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file '../../Cpp/src/test_midpoint.cpp' to the project
+INFO: [HLS 200-10] Opening solution '/home/herreral/Code/SystemC/HLSLinearGPU/HLS/midpoint/midpoint/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Analyzing design file '../../Cpp/src/midpoint.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 375.648 ; gain = 0.086 ; free physical = 184 ; free virtual = 3254
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 375.648 ; gain = 0.086 ; free physical = 184 ; free virtual = 3254
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 375.711 ; gain = 0.148 ; free physical = 153 ; free virtual = 3221
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 375.711 ; gain = 0.148 ; free physical = 151 ; free virtual = 3219
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 503.562 ; gain = 128.000 ; free physical = 129 ; free virtual = 3198
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 503.562 ; gain = 128.000 ; free physical = 137 ; free virtual = 3205
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'midpoint::line' ...
+WARNING: [SYN 201-103] Top function name 'midpoint::line' is not a legal RTL name.
+WARNING: [SYN 201-103] Top function name 'midpoint::line' is not a legal RTL name and is changed to 'midpoint_line'; this may result in automatic C/RTL co-simulation failure.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'midpoint_line' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 8.08 seconds; current allocated memory: 69.006 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 1 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.02 seconds; current allocated memory: 69.194 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'midpoint_line' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'midpoint_line/midpoint_X0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'midpoint_line/midpoint_Y0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'midpoint_line/midpoint_X1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'midpoint_line/midpoint_Y1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'midpoint_line/midpoint_PX' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'midpoint_line/midpoint_PY' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'midpoint_line' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'midpoint_line'.
+INFO: [HLS 200-111]  Elapsed time: 0.05 seconds; current allocated memory: 69.572 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 503.562 ; gain = 128.000 ; free physical = 127 ; free virtual = 3210
+INFO: [SYSC 207-301] Generating SystemC RTL for midpoint_line.
+INFO: [VHDL 208-304] Generating VHDL RTL for midpoint_line.
+INFO: [VLOG 209-307] Generating Verilog RTL for midpoint_line.
+INFO: [HLS 200-112] Total elapsed time: 8.73 seconds; peak allocated memory: 69.572 MB.

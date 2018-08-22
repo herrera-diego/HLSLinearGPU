@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [SYN 201-103] Top function name 'midpoint::line' is not a legal RTL name and is changed to 'midpoint_line'; this may result in automatic C/RTL co-simulation failure." projectName="midpoint" solutionName="solution1" date="2018-08-22T07:50:07.511-0600" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Top function name 'midpoint::line' is not a legal RTL name." projectName="midpoint" solutionName="solution1" date="2018-08-22T07:50:07.507-0600" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>
