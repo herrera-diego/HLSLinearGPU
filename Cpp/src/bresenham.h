@@ -12,19 +12,15 @@
  *  Kevin Víquez    200944341
  *******************************************************/
 
-#ifndef __MID_POINT__
-#define __MID_POINT__
+#ifndef __BRESENHAM__
+#define __BRESENHAM__
 
 #include "stdio.h"
 #include <iostream>
 
-class midpoint
+class bresenham
 {
     public:
-       
-        // This should be used instead of SC_CTOR to enable a custom constructor
-
-        midpoint();
 
         void line();
         
@@ -37,4 +33,4 @@ class midpoint
         int     PY;
 };
 
-#endif //__MID_POINT__
+#endif //__BRESENHAM__

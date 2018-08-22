@@ -17,11 +17,6 @@
 #include "midpoint.h"
 #include "stdio.h"
 #include <iostream>
-// Generate a random delay (with power-law distribution) to aid testing and stress the protocol
-
-midpoint::midpoint()
-{
-}
 
 void midpoint::line()
 {

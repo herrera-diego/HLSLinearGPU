@@ -12,17 +12,19 @@
  *  Kevin Víquez    200944341
  *******************************************************/
 
-#ifndef __MID_POINT__
-#define __MID_POINT__
+#ifndef __DDA__
+#define __DDA__
 
-#include "stdio.h"
+#include <stdio.h>
+#include <math.h>
 #include <iostream>
 
-class midpoint
+class dda
 {
     public:
-       
+
         void line();
+        int abs(int n);
         
         int             X0;
         int             Y0;
@@ -33,4 +35,5 @@ class midpoint
         int     PY;
 };
 
-#endif //__MID_POINT__
+
+#endif //__DDA__
