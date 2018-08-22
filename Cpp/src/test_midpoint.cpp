@@ -13,18 +13,21 @@
  *******************************************************/
 
 #include "midpoint.h"
+#include "stdlib.h"
 
 int main(int argc, char* argv[])
 {
   std::cout << "Hello World!" << std::endl;
 
-  midpoint line3;
-  line3.X0 = 0;
-  line3.Y0 = 5;
-  line3.X1 = 8;
-  line3.Y1 = 6;
-  line3.line();
-
+  //midpoint line3;
+  /*X0 = 0;
+  Y0 = 5;
+  X1 = 8;
+  Y1 = 6;*/
+  int *x, *y;
+  x = new int;
+  y = new int;
+  drawLine(0,5,8,6,x,y);
 
   std::cout << "End!" << std::endl;
 

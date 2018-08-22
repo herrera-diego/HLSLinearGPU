@@ -18,16 +18,22 @@
 #include "stdio.h"
 #include <iostream>
 
-void midpoint::line()
+
+void drawLine(int x0, int y0, int x1, int y1, int *xp, int *yp)
 {
-    
+    //int PX;
+    //int PY;
+
     std::cout << "Mid Point Start" <<std::endl;
-    int dx = X1 - X0;
-    int dy = Y1 - Y0;
+    int dx = x1 - x0;
+    int dy = y1 - y0;
 
     // initial value of decision parameter d
     int d = dy - (dx/2);
-    int x = X0, y = Y0;
+    int x = x0, y = y0;
+
+    int xi =0;
+    int yi =0;
 
     // Plot initial given point
     // putpixel(x,y) can be used to print pixel
@@ -35,7 +41,7 @@ void midpoint::line()
     std::cout << x << "," << y << "\n";
 
     // iterate through value of X
-    while (x < X1)
+    while (x < x1)
     {
         x++;
 
@@ -53,9 +59,14 @@ void midpoint::line()
         // Plot intermediate points
         // putpixel(x,y) is used to print pixel
         // of line in graphics
-        PX = x;
-        PY = y;
-        std::cout << PX << "," << PY << std::endl;
+        xp[xi] = x;
+        yp[yi] = y;
+        putPixel(xp[xi], yp[yi]);
     }
+}
+
+void putPixel(int x, int y)
+{
+	std::cout << x << "," << y << std::endl;
 }
 

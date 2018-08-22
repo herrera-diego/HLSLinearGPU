@@ -18,19 +18,11 @@
 #include "stdio.h"
 #include <iostream>
 
-class midpoint
-{
-    public:
-       
-        void line();
-        
-        int             X0;
-        int             Y0;
-        int             X1;
-        int             Y1;
 
-        int     PX;
-        int     PY;
-};
+       
+void drawLine(int x0, int y0, int x1, int y1, int *x, int *y);
+void putPixel(int x, int y);
+
+
 
 #endif //__MID_POINT__
