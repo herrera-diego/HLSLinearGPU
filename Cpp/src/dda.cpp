@@ -37,8 +37,8 @@ void dda::line()
     //float Yp = Y;
     for (int i = 0; i <= steps; i++)
     {
-        PX = round(X);
-        PY = round(Y);
+        PX = std::round(X);
+        PY = std::round(Y);
         std::cout << PX <<","<< PY <<std::endl;
         //putpixel (X,Y,RED);  // put pixel at (X,Y)
         X += Xinc;           // increment in x at each step
