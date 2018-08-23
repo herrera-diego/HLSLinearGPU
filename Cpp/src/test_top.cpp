@@ -12,23 +12,28 @@
  *  Kevin Víquez    200944341
  *******************************************************/
 
-
-#include "dda.h"
-
+#include "lineAlgorithms.h"
+#include "stdlib.h"
 
 int main(int argc, char* argv[])
 {
-  std::cout << "Hello World!" << std::endl;
+  std::cout << "TEST BENCH" << std::endl;
 
-  
-  dda line1;
-  line1.X0 = 0;
-  line1.Y0 = 5;
-  line1.X1 = 8;
-  line1.Y1 = 6;
-  line1.line();
+  //midpoint line3;
+  /*X0 = 0;
+  Y0 = 5;
+  X1 = 8;
+  Y1 = 6;*/
+  int *x, *y;
+  x = new int;
+  y = new int;
+  midpoint(0,5,8,6,x,y);
 
-  std::cout << "End!" << std::endl;
+  dda(0,5,8,6,x,y);
+
+  bresenham(0,5,8,6,x,y);
+
+  std::cout << "DONE!" << std::endl;
 
   
   return 0;

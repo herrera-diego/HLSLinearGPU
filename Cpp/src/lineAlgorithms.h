@@ -12,25 +12,19 @@
  *  Kevin Víquez    200944341
  *******************************************************/
 
-#include "midpoint.h"
-#include "stdlib.h"
+#ifndef __MID_POINT__
+#define __MID_POINT__
 
-int main(int argc, char* argv[])
-{
-  std::cout << "Hello World!" << std::endl;
+#include "stdio.h"
+#include <iostream>
+#include <math.h>
 
-  //midpoint line3;
-  /*X0 = 0;
-  Y0 = 5;
-  X1 = 8;
-  Y1 = 6;*/
-  int *x, *y;
-  x = new int;
-  y = new int;
-  drawLine(0,5,8,6,x,y);
+void dda(int x0, int y0, int x1, int y1, int *x, int *y);
+void bresenham(int x0, int y0, int x1, int y1, int *x, int *y);       
+void midpoint(int x0, int y0, int x1, int y1, int *x, int *y);
+void putPixel(int x, int y);
+int abs (int n);
 
-  std::cout << "End!" << std::endl;
 
-  
-  return 0;
-}
+
+#endif //__MID_POINT__

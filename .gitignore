@@ -6,3 +6,4 @@ bresenham.o
 midpoint.o
 tb_top.vcd
 test_top.o
+lineAlgorithms.o
