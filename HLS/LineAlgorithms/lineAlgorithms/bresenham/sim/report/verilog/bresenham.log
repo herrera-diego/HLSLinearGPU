@@ -1,0 +1,181 @@
+INFO: [COSIM-47] Using XSIM for RTL simulation.
+INFO: [COSIM-14] Instrumenting C test bench ...
+   Build using "/opt/Xilinx/Vivado/2018.2/tps/lnx64/gcc-6.2.0/bin/g++"
+   Compiling test_top.cpp_pre.cpp.tb.cpp
+   Compiling apatb_bresenham.cpp
+   Compiling lineAlgorithms.cpp_pre.cpp.tb.cpp
+   Generating cosim.tv.exe
+INFO: [COSIM-302] Starting C TB testing ... 
+INFO: [COSIM-333] Generating C post check test bench ...
+INFO: [COSIM-12] Generating RTL test bench ...
+INFO: [COSIM-323] Starting verilog simulation. 
+INFO: [COSIM-15] Starting XSIM ...
+INFO: [COSIM-316] Starting C post checking ...
+TEST BENCH
+Mid Point Start
+0,5
+1,5
+2,5
+3,5
+4,6
+5,6
+6,6
+7,6
+8,6
+DDA Start
+0,5
+1,5
+2,5
+3,5
+4,6
+5,6
+6,6
+7,6
+8,6
+Bresenham Start
+0,5
+1,5
+2,6
+3,6
+4,6
+5,6
+6,6
+7,6
+8,6
+DONE!
+INFO: [XSIM 43-3496] Using init file passed via -initfile option "/opt/Xilinx/Vivado/2018.2/data/xsim/ip/xsim_ip.ini".
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_bresenham_top glbl -prj bresenham.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm --initfile /opt/Xilinx/Vivado/2018.2/data/xsim/ip/xsim_ip.ini --lib ieee_proposed=./ieee_proposed -s bresenham -debug wave 
+Multi-threading is on. Using 2 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/herreral/Code/SystemC/HLSLinearGPU/HLS/LineAlgorithms/lineAlgorithms/bresenham/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/herreral/Code/SystemC/HLSLinearGPU/HLS/LineAlgorithms/lineAlgorithms/bresenham/sim/verilog/bresenham.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bresenham
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/herreral/Code/SystemC/HLSLinearGPU/HLS/LineAlgorithms/lineAlgorithms/bresenham/sim/verilog/bresenham.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_bresenham_top
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bresenham
+Compiling module xil_defaultlib.apatb_bresenham_top
+Compiling module work.glbl
+Built simulation snapshot bresenham
+
+****** Webtalk v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source /home/herreral/Code/SystemC/HLSLinearGPU/HLS/LineAlgorithms/lineAlgorithms/bresenham/sim/verilog/xsim.dir/bresenham/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/herreral/Code/SystemC/HLSLinearGPU/HLS/LineAlgorithms/lineAlgorithms/bresenham/sim/verilog/xsim.dir/bresenham/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Aug 22 22:15:41 2018. For additional details about this file, please refer to the WebTalk help file at /opt/Xilinx/Vivado/2018.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed Aug 22 22:15:41 2018...
+
+****** xsim v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/bresenham/xsim_script.tcl
+# xsim {bresenham} -autoloadwcfg -tclbatch {bresenham.tcl}
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source bresenham.tcl
+## log_wave -r /
+## set designtopgroup [add_wave_group "Design Top Signals"]
+## set coutputgroup [add_wave_group "C Outputs" -into $designtopgroup]
+## set yp_group [add_wave_group yp(wire) -into $coutputgroup]
+## add_wave /apatb_bresenham_top/AESL_inst_bresenham/yp_ap_vld -into $yp_group -color #ffff00 -radix hex
+## add_wave /apatb_bresenham_top/AESL_inst_bresenham/yp -into $yp_group -radix hex
+## set xp_group [add_wave_group xp(wire) -into $coutputgroup]
+## add_wave /apatb_bresenham_top/AESL_inst_bresenham/xp_ap_vld -into $xp_group -color #ffff00 -radix hex
+## add_wave /apatb_bresenham_top/AESL_inst_bresenham/xp -into $xp_group -radix hex
+## set cinputgroup [add_wave_group "C Inputs" -into $designtopgroup]
+## set y1_group [add_wave_group y1(wire) -into $cinputgroup]
+## add_wave /apatb_bresenham_top/AESL_inst_bresenham/y1 -into $y1_group -radix hex
+## set x1_group [add_wave_group x1(wire) -into $cinputgroup]
+## add_wave /apatb_bresenham_top/AESL_inst_bresenham/x1 -into $x1_group -radix hex
+## set y0_group [add_wave_group y0(wire) -into $cinputgroup]
+## add_wave /apatb_bresenham_top/AESL_inst_bresenham/y0 -into $y0_group -radix hex
+## set x0_group [add_wave_group x0(wire) -into $cinputgroup]
+## add_wave /apatb_bresenham_top/AESL_inst_bresenham/x0 -into $x0_group -radix hex
+## set blocksiggroup [add_wave_group "Block-level IO Handshake" -into $designtopgroup]
+## add_wave /apatb_bresenham_top/AESL_inst_bresenham/ap_start -into $blocksiggroup
+## add_wave /apatb_bresenham_top/AESL_inst_bresenham/ap_done -into $blocksiggroup
+## add_wave /apatb_bresenham_top/AESL_inst_bresenham/ap_idle -into $blocksiggroup
+## add_wave /apatb_bresenham_top/AESL_inst_bresenham/ap_ready -into $blocksiggroup
+## set resetgroup [add_wave_group "Reset" -into $designtopgroup]
+## add_wave /apatb_bresenham_top/AESL_inst_bresenham/ap_rst -into $resetgroup
+## set clockgroup [add_wave_group "Clock" -into $designtopgroup]
+## add_wave /apatb_bresenham_top/AESL_inst_bresenham/ap_clk -into $clockgroup
+## set testbenchgroup [add_wave_group "Test Bench Signals"]
+## set tbinternalsiggroup [add_wave_group "Internal Signals" -into $testbenchgroup]
+## set tb_simstatus_group [add_wave_group "Simulation Status" -into $tbinternalsiggroup]
+## set tb_portdepth_group [add_wave_group "Port Depth" -into $tbinternalsiggroup]
+## add_wave /apatb_bresenham_top/AUTOTB_TRANSACTION_NUM -into $tb_simstatus_group -radix hex
+## add_wave /apatb_bresenham_top/ready_cnt -into $tb_simstatus_group -radix hex
+## add_wave /apatb_bresenham_top/done_cnt -into $tb_simstatus_group -radix hex
+## add_wave /apatb_bresenham_top/LENGTH_x0 -into $tb_portdepth_group -radix hex
+## add_wave /apatb_bresenham_top/LENGTH_y0 -into $tb_portdepth_group -radix hex
+## add_wave /apatb_bresenham_top/LENGTH_x1 -into $tb_portdepth_group -radix hex
+## add_wave /apatb_bresenham_top/LENGTH_y1 -into $tb_portdepth_group -radix hex
+## add_wave /apatb_bresenham_top/LENGTH_xp -into $tb_portdepth_group -radix hex
+## add_wave /apatb_bresenham_top/LENGTH_yp -into $tb_portdepth_group -radix hex
+## set tbcoutputgroup [add_wave_group "C Outputs" -into $testbenchgroup]
+## set tb_yp_group [add_wave_group yp(wire) -into $tbcoutputgroup]
+## add_wave /apatb_bresenham_top/yp_ap_vld -into $tb_yp_group -color #ffff00 -radix hex
+## add_wave /apatb_bresenham_top/yp -into $tb_yp_group -radix hex
+## set tb_xp_group [add_wave_group xp(wire) -into $tbcoutputgroup]
+## add_wave /apatb_bresenham_top/xp_ap_vld -into $tb_xp_group -color #ffff00 -radix hex
+## add_wave /apatb_bresenham_top/xp -into $tb_xp_group -radix hex
+## set tbcinputgroup [add_wave_group "C Inputs" -into $testbenchgroup]
+## set tb_y1_group [add_wave_group y1(wire) -into $tbcinputgroup]
+## add_wave /apatb_bresenham_top/y1 -into $tb_y1_group -radix hex
+## set tb_x1_group [add_wave_group x1(wire) -into $tbcinputgroup]
+## add_wave /apatb_bresenham_top/x1 -into $tb_x1_group -radix hex
+## set tb_y0_group [add_wave_group y0(wire) -into $tbcinputgroup]
+## add_wave /apatb_bresenham_top/y0 -into $tb_y0_group -radix hex
+## set tb_x0_group [add_wave_group x0(wire) -into $tbcinputgroup]
+## add_wave /apatb_bresenham_top/x0 -into $tb_x0_group -radix hex
+## save_wave_config bresenham.wcfg
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [n/a] @ "125000"
+// RTL Simulation : 1 / 1 [n/a] @ "255000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 295 ns : File "/home/herreral/Code/SystemC/HLSLinearGPU/HLS/LineAlgorithms/lineAlgorithms/bresenham/sim/verilog/bresenham.autotb.v" Line 525
+## quit
+INFO: [Common 17-206] Exiting xsim at Wed Aug 22 22:15:55 2018...
+TEST BENCH
+Mid Point Start
+0,5
+1,5
+2,5
+3,5
+4,6
+5,6
+6,6
+7,6
+8,6
+DDA Start
+0,5
+1,5
+2,5
+3,5
+4,6
+5,6
+6,6
+7,6
+8,6
+DONE!
+INFO: [COSIM-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.

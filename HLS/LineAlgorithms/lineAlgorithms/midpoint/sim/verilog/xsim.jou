@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# xsim v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Wed Aug 22 22:10:15 2018
+# Process ID: 31298
+# Current directory: /home/herreral/Code/SystemC/HLSLinearGPU/HLS/LineAlgorithms/lineAlgorithms/hls/sim/verilog
+# Command line: xsim -mode tcl -source {xsim.dir/midpoint/xsim_script.tcl}
+# Log file: /home/herreral/Code/SystemC/HLSLinearGPU/HLS/LineAlgorithms/lineAlgorithms/hls/sim/verilog/xsim.log
+# Journal file: /home/herreral/Code/SystemC/HLSLinearGPU/HLS/LineAlgorithms/lineAlgorithms/hls/sim/verilog/xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/midpoint/xsim_script.tcl
+source midpoint.tcl

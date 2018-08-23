@@ -12,19 +12,19 @@
  *  Kevin Víquez    200944341
  *******************************************************/
 
-#ifndef __MID_POINT__
-#define __MID_POINT__
+#ifndef __LINE_ALGORITHMS__
+#define __LINE_ALGORITHMS__
 
 #include "stdio.h"
 #include <iostream>
-#include <math.h>
 
 void dda(int x0, int y0, int x1, int y1, int *x, int *y);
 void bresenham(int x0, int y0, int x1, int y1, int *x, int *y);       
 void midpoint(int x0, int y0, int x1, int y1, int *x, int *y);
 void putPixel(int x, int y);
 int abs (int n);
+int round(float x);
 
 
 
-#endif //__MID_POINT__
+#endif //__LINE_ALGORITHMS__

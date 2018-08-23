@@ -1,0 +1,168 @@
+
+
+================================================================
+== Vivado HLS Report for 'bresenham'
+================================================================
+* Date:           Wed Aug 22 22:14:42 2018
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        lineAlgorithms
+* Solution:       bresenham
+* Product family: aartix7
+* Target device:  xa7a12tcsg325-1q
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     6.774|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    ?|    ?|         1|          -|          -|     ?|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	3  / (!tmp_5)
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.70>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%y1_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %y1) nounwind"   --->   Operation 4 'read' 'y1_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%y0_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %y0) nounwind"   --->   Operation 5 'read' 'y0_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (2.70ns)   --->   "%tmp = sub nsw i32 %y1_read, %y0_read" [../../Cpp/src/lineAlgorithms.cpp:75]   --->   Operation 6 'sub' 'tmp' <Predicate = true> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 2 <SV = 1> <Delay = 4.50>
+ST_2 : Operation 7 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %x0) nounwind, !map !30"   --->   Operation 7 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %y0) nounwind, !map !36"   --->   Operation 8 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %x1) nounwind, !map !40"   --->   Operation 9 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %y1) nounwind, !map !44"   --->   Operation 10 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %xp) nounwind, !map !48"   --->   Operation 11 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %yp) nounwind, !map !52"   --->   Operation 12 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([10 x i8]* @bresenham_str) nounwind"   --->   Operation 13 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%x1_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %x1) nounwind"   --->   Operation 14 'read' 'x1_read' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%x0_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %x0) nounwind"   --->   Operation 15 'read' 'x0_read' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%m_new = shl i32 %tmp, 1" [../../Cpp/src/lineAlgorithms.cpp:75]   --->   Operation 16 'shl' 'm_new' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp_1 = sub i32 %x0_read, %x1_read" [../../Cpp/src/lineAlgorithms.cpp:76]   --->   Operation 17 'sub' 'tmp_1' <Predicate = true> <Delay = 0.00> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 18 [1/1] (4.50ns) (root node of TernaryAdder)   --->   "%slope_error_new = add i32 %tmp_1, %m_new" [../../Cpp/src/lineAlgorithms.cpp:76]   --->   Operation 18 'add' 'slope_error_new' <Predicate = true> <Delay = 4.50> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.25> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 19 [1/1] (2.70ns)   --->   "%tmp_3 = sub nsw i32 %x1_read, %x0_read" [../../Cpp/src/lineAlgorithms.cpp:87]   --->   Operation 19 'sub' 'tmp_3' <Predicate = true> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%tmp_4 = shl i32 %tmp_3, 1" [../../Cpp/src/lineAlgorithms.cpp:87]   --->   Operation 20 'shl' 'tmp_4' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (1.66ns)   --->   "br label %1" [../../Cpp/src/lineAlgorithms.cpp:77]   --->   Operation 21 'br' <Predicate = true> <Delay = 1.66>
+
+State 3 <SV = 2> <Delay = 6.77>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%slope_error_new1 = phi i32 [ %slope_error_new, %0 ], [ %slope_error_new_1, %_ifconv ]"   --->   Operation 22 'phi' 'slope_error_new1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%x = phi i32 [ %x0_read, %0 ], [ %x_1, %_ifconv ]"   --->   Operation 23 'phi' 'x' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%y = phi i32 [ %y0_read, %0 ], [ %y_1, %_ifconv ]"   --->   Operation 24 'phi' 'y' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 25 [1/1] (2.43ns)   --->   "%tmp_5 = icmp sgt i32 %x, %x1_read" [../../Cpp/src/lineAlgorithms.cpp:77]   --->   Operation 25 'icmp' 'tmp_5' <Predicate = true> <Delay = 2.43> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 26 [1/1] (0.00ns)   --->   "br i1 %tmp_5, label %2, label %_ifconv" [../../Cpp/src/lineAlgorithms.cpp:77]   --->   Operation 26 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 27 [1/1] (2.70ns)   --->   "%slope_error_new_2 = add nsw i32 %slope_error_new1, %m_new" [../../Cpp/src/lineAlgorithms.cpp:80]   --->   Operation 27 'add' 'slope_error_new_2' <Predicate = (!tmp_5)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%tmp_6 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %slope_error_new_2, i32 31)" [../../Cpp/src/lineAlgorithms.cpp:84]   --->   Operation 28 'bitselect' 'tmp_6' <Predicate = (!tmp_5)> <Delay = 0.00>
+ST_3 : Operation 29 [1/1] (2.70ns)   --->   "%y_2 = add nsw i32 %y, 1" [../../Cpp/src/lineAlgorithms.cpp:86]   --->   Operation 29 'add' 'y_2' <Predicate = (!tmp_5)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 30 [1/1] (2.70ns)   --->   "%slope_error_new_3 = sub nsw i32 %slope_error_new_2, %tmp_4" [../../Cpp/src/lineAlgorithms.cpp:87]   --->   Operation 30 'sub' 'slope_error_new_3' <Predicate = (!tmp_5)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 31 [1/1] (1.37ns)   --->   "%slope_error_new_1 = select i1 %tmp_6, i32 %slope_error_new_2, i32 %slope_error_new_3" [../../Cpp/src/lineAlgorithms.cpp:84]   --->   Operation 31 'select' 'slope_error_new_1' <Predicate = (!tmp_5)> <Delay = 1.37> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 32 [1/1] (1.37ns)   --->   "%y_1 = select i1 %tmp_6, i32 %y, i32 %y_2" [../../Cpp/src/lineAlgorithms.cpp:84]   --->   Operation 32 'select' 'y_1' <Predicate = (!tmp_5)> <Delay = 1.37> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 33 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i32P(i32* %xp, i32 %x) nounwind" [../../Cpp/src/lineAlgorithms.cpp:90]   --->   Operation 33 'write' <Predicate = (!tmp_5)> <Delay = 0.00>
+ST_3 : Operation 34 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i32P(i32* %yp, i32 %y_1) nounwind" [../../Cpp/src/lineAlgorithms.cpp:91]   --->   Operation 34 'write' <Predicate = (!tmp_5)> <Delay = 0.00>
+ST_3 : Operation 35 [1/1] (2.70ns)   --->   "%x_1 = add nsw i32 %x, 1" [../../Cpp/src/lineAlgorithms.cpp:77]   --->   Operation 35 'add' 'x_1' <Predicate = (!tmp_5)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "br label %1" [../../Cpp/src/lineAlgorithms.cpp:77]   --->   Operation 36 'br' <Predicate = (!tmp_5)> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "ret void" [../../Cpp/src/lineAlgorithms.cpp:96]   --->   Operation 37 'ret' <Predicate = (tmp_5)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 2.7ns
+The critical path consists of the following:
+	wire read on port 'y1' [14]  (0 ns)
+	'sub' operation ('tmp', ../../Cpp/src/lineAlgorithms.cpp:75) [18]  (2.7 ns)
+
+ <State 2>: 4.5ns
+The critical path consists of the following:
+	wire read on port 'x1' [15]  (0 ns)
+	'sub' operation ('tmp_1', ../../Cpp/src/lineAlgorithms.cpp:76) [20]  (0 ns)
+	'add' operation ('slope_error_new', ../../Cpp/src/lineAlgorithms.cpp:76) [21]  (4.5 ns)
+
+ <State 3>: 6.77ns
+The critical path consists of the following:
+	'phi' operation ('slope_error_new') with incoming values : ('slope_error_new', ../../Cpp/src/lineAlgorithms.cpp:76) ('slope_error_new', ../../Cpp/src/lineAlgorithms.cpp:84) [26]  (0 ns)
+	'add' operation ('slope_error_new', ../../Cpp/src/lineAlgorithms.cpp:80) [32]  (2.7 ns)
+	'sub' operation ('slope_error_new', ../../Cpp/src/lineAlgorithms.cpp:87) [35]  (2.7 ns)
+	'select' operation ('slope_error_new', ../../Cpp/src/lineAlgorithms.cpp:84) [36]  (1.37 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

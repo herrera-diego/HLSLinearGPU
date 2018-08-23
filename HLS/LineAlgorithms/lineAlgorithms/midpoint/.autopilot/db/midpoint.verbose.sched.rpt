@@ -1,0 +1,173 @@
+
+
+================================================================
+== Vivado HLS Report for 'midpoint'
+================================================================
+* Date:           Wed Aug 22 22:09:17 2018
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        lineAlgorithms
+* Solution:       hls
+* Product family: aartix7
+* Target device:  xa7a12tcsg325-1q
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     5.404|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    ?|    ?|         1|          -|          -|     ?|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	3  / (tmp_3)
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 5.40>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%x1_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %x1) nounwind"   --->   Operation 4 'read' 'x1_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%x0_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %x0) nounwind"   --->   Operation 5 'read' 'x0_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (2.70ns)   --->   "%dx = sub nsw i32 %x1_read, %x0_read" [../../Cpp/src/lineAlgorithms.cpp:28]   --->   Operation 6 'sub' 'dx' <Predicate = true> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 7 [1/1] (2.70ns)   --->   "%p_neg = sub i32 0, %dx" [../../Cpp/src/lineAlgorithms.cpp:32]   --->   Operation 7 'sub' 'p_neg' <Predicate = true> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%p_lshr = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %p_neg, i32 1, i32 31)" [../../Cpp/src/lineAlgorithms.cpp:32]   --->   Operation 8 'partselect' 'p_lshr' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 5.40>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %x0) nounwind, !map !30"   --->   Operation 9 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %y0) nounwind, !map !36"   --->   Operation 10 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %x1) nounwind, !map !40"   --->   Operation 11 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %y1) nounwind, !map !44"   --->   Operation 12 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %xp) nounwind, !map !48"   --->   Operation 13 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %yp) nounwind, !map !52"   --->   Operation 14 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @midpoint_str) nounwind"   --->   Operation 15 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%y1_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %y1) nounwind"   --->   Operation 16 'read' 'y1_read' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%y0_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %y0) nounwind"   --->   Operation 17 'read' 'y0_read' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (2.70ns)   --->   "%dy = sub nsw i32 %y1_read, %y0_read" [../../Cpp/src/lineAlgorithms.cpp:29]   --->   Operation 18 'sub' 'dy' <Predicate = true> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 19 [1/1] (0.00ns) (grouped into LUT with out node d)   --->   "%tmp_5 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %dx, i32 31)" [../../Cpp/src/lineAlgorithms.cpp:32]   --->   Operation 19 'bitselect' 'tmp_5' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%tmp_1 = zext i31 %p_lshr to i32" [../../Cpp/src/lineAlgorithms.cpp:32]   --->   Operation 20 'zext' 'tmp_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (2.66ns)   --->   "%p_neg_t = sub i32 0, %tmp_1" [../../Cpp/src/lineAlgorithms.cpp:32]   --->   Operation 21 'sub' 'p_neg_t' <Predicate = true> <Delay = 2.66> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 22 [1/1] (0.00ns) (grouped into LUT with out node d)   --->   "%p_lshr_f = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %dx, i32 1, i32 31)" [../../Cpp/src/lineAlgorithms.cpp:32]   --->   Operation 22 'partselect' 'p_lshr_f' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (0.00ns) (grouped into LUT with out node d)   --->   "%tmp_4 = zext i31 %p_lshr_f to i32" [../../Cpp/src/lineAlgorithms.cpp:32]   --->   Operation 23 'zext' 'tmp_4' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns) (grouped into LUT with out node d)   --->   "%tmp = select i1 %tmp_5, i32 %p_neg_t, i32 %tmp_4" [../../Cpp/src/lineAlgorithms.cpp:32]   --->   Operation 24 'select' 'tmp' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 25 [1/1] (2.70ns) (out node of the LUT)   --->   "%d = sub nsw i32 %dy, %tmp" [../../Cpp/src/lineAlgorithms.cpp:32]   --->   Operation 25 'sub' 'd' <Predicate = true> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 26 [1/1] (2.70ns)   --->   "%tmp_2 = sub nsw i32 %dy, %dx" [../../Cpp/src/lineAlgorithms.cpp:54]   --->   Operation 26 'sub' 'tmp_2' <Predicate = true> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 27 [1/1] (1.66ns)   --->   "br label %1" [../../Cpp/src/lineAlgorithms.cpp:43]   --->   Operation 27 'br' <Predicate = true> <Delay = 1.66>
+
+State 3 <SV = 2> <Delay = 4.07>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%d1 = phi i32 [ %d, %0 ], [ %d_1, %2 ]"   --->   Operation 28 'phi' 'd1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%x = phi i32 [ %x0_read, %0 ], [ %x_1, %2 ]"   --->   Operation 29 'phi' 'x' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%y = phi i32 [ %y0_read, %0 ], [ %y_0_s, %2 ]" [../../Cpp/src/lineAlgorithms.cpp:48]   --->   Operation 30 'phi' 'y' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 31 [1/1] (2.43ns)   --->   "%tmp_3 = icmp slt i32 %x, %x1_read" [../../Cpp/src/lineAlgorithms.cpp:43]   --->   Operation 31 'icmp' 'tmp_3' <Predicate = true> <Delay = 2.43> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "br i1 %tmp_3, label %2, label %3" [../../Cpp/src/lineAlgorithms.cpp:43]   --->   Operation 32 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 33 [1/1] (2.70ns)   --->   "%x_1 = add nsw i32 %x, 1" [../../Cpp/src/lineAlgorithms.cpp:45]   --->   Operation 33 'add' 'x_1' <Predicate = (tmp_3)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 34 [1/1] (0.00ns)   --->   "%tmp_6 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %d1, i32 31)" [../../Cpp/src/lineAlgorithms.cpp:48]   --->   Operation 34 'bitselect' 'tmp_6' <Predicate = (tmp_3)> <Delay = 0.00>
+ST_3 : Operation 35 [1/1] (2.70ns)   --->   "%y_1 = add nsw i32 %y, 1" [../../Cpp/src/lineAlgorithms.cpp:55]   --->   Operation 35 'add' 'y_1' <Predicate = (tmp_3)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 36 [1/1] (0.00ns) (grouped into LUT with out node d_1)   --->   "%dy_0_s = select i1 %tmp_6, i32 %dy, i32 %tmp_2" [../../Cpp/src/lineAlgorithms.cpp:48]   --->   Operation 36 'select' 'dy_0_s' <Predicate = (tmp_3)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 37 [1/1] (1.37ns)   --->   "%y_0_s = select i1 %tmp_6, i32 %y, i32 %y_1" [../../Cpp/src/lineAlgorithms.cpp:48]   --->   Operation 37 'select' 'y_0_s' <Predicate = (tmp_3)> <Delay = 1.37> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 38 [1/1] (2.70ns) (out node of the LUT)   --->   "%d_1 = add nsw i32 %dy_0_s, %d1" [../../Cpp/src/lineAlgorithms.cpp:49]   --->   Operation 38 'add' 'd_1' <Predicate = (tmp_3)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i32P(i32* %xp, i32 %x_1) nounwind" [../../Cpp/src/lineAlgorithms.cpp:61]   --->   Operation 39 'write' <Predicate = (tmp_3)> <Delay = 0.00>
+ST_3 : Operation 40 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i32P(i32* %yp, i32 %y_0_s) nounwind" [../../Cpp/src/lineAlgorithms.cpp:62]   --->   Operation 40 'write' <Predicate = (tmp_3)> <Delay = 0.00>
+ST_3 : Operation 41 [1/1] (0.00ns)   --->   "br label %1" [../../Cpp/src/lineAlgorithms.cpp:66]   --->   Operation 41 'br' <Predicate = (tmp_3)> <Delay = 0.00>
+ST_3 : Operation 42 [1/1] (0.00ns)   --->   "ret void" [../../Cpp/src/lineAlgorithms.cpp:67]   --->   Operation 42 'ret' <Predicate = (!tmp_3)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 5.4ns
+The critical path consists of the following:
+	wire read on port 'x1' [15]  (0 ns)
+	'sub' operation ('dx', ../../Cpp/src/lineAlgorithms.cpp:28) [18]  (2.7 ns)
+	'sub' operation ('p_neg', ../../Cpp/src/lineAlgorithms.cpp:32) [21]  (2.7 ns)
+
+ <State 2>: 5.4ns
+The critical path consists of the following:
+	wire read on port 'y1' [14]  (0 ns)
+	'sub' operation ('dy', ../../Cpp/src/lineAlgorithms.cpp:29) [19]  (2.7 ns)
+	'sub' operation ('d', ../../Cpp/src/lineAlgorithms.cpp:32) [28]  (2.7 ns)
+
+ <State 3>: 4.07ns
+The critical path consists of the following:
+	'phi' operation ('y', ../../Cpp/src/lineAlgorithms.cpp:48) with incoming values : ('y0') ('y_0_s', ../../Cpp/src/lineAlgorithms.cpp:48) [34]  (0 ns)
+	'add' operation ('y', ../../Cpp/src/lineAlgorithms.cpp:55) [40]  (2.7 ns)
+	'select' operation ('y_0_s', ../../Cpp/src/lineAlgorithms.cpp:48) [42]  (1.37 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

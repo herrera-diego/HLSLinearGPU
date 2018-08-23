@@ -61,8 +61,8 @@ void midpoint(int x0, int y0, int x1, int y1, int *xp, int *yp)
         xp[xi] = x;
         yp[yi] = y;
         putPixel(xp[xi], yp[yi]);
-        xi++;
-        yi++;
+        //xi++;
+        //yi++;
     }
 }
 
@@ -90,8 +90,8 @@ void bresenham(int x0, int y0, int x1, int y1, int *xp, int *yp)
         xp[xi] = x;
         yp[yi] = y;
         putPixel(xp[xi], yp[yi]);
-        xi++;
-        yi++;
+        //xi++;
+        //yi++;
     }
 }
 
@@ -118,9 +118,10 @@ void dda(int x0, int y0, int x1, int y1, int *xp, int *yp)
     //float Yp = Y;
     for (int i = 0; i <= steps; i++)
     {
-        xp[xi] = std::round(X);
-        yp[yi] = std::round(Y);
-        std::cout << xp[xi] <<","<< yp[yi] <<std::endl;
+        xp[xi] = round(X);
+        yp[yi] = round(Y);
+        putPixel(xp[xi], yp[yi]);
+        //std::cout << xp[xi] <<","<< yp[yi] <<std::endl;
         //putpixel (X,Y,RED);  // put pixel at (X,Y)
         X += Xinc;           // increment in x at each step
         Y += Yinc;           // increment in y at each step
@@ -140,4 +141,16 @@ void putPixel(int x, int y)
 {
 	std::cout << x << "," << y << std::endl;
 }
+
+
+
+int round(float x)
+{
+    if (x < 0.0)
+        return (int)(x - 0.5);
+    else
+        return (int)(x + 0.5);
+}
+
+
 

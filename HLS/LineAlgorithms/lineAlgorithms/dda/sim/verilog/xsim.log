@@ -1,0 +1,144 @@
+#-----------------------------------------------------------
+# xsim v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Wed Aug 22 22:23:40 2018
+# Process ID: 386
+# Current directory: /home/herreral/Code/SystemC/HLSLinearGPU/HLS/LineAlgorithms/lineAlgorithms/dda/sim/verilog
+# Command line: xsim -mode tcl -source {xsim.dir/dda/xsim_script.tcl}
+# Log file: /home/herreral/Code/SystemC/HLSLinearGPU/HLS/LineAlgorithms/lineAlgorithms/dda/sim/verilog/xsim.log
+# Journal file: /home/herreral/Code/SystemC/HLSLinearGPU/HLS/LineAlgorithms/lineAlgorithms/dda/sim/verilog/xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/dda/xsim_script.tcl
+# xsim {dda} -autoloadwcfg -tclbatch {dda.tcl}
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source dda.tcl
+## log_wave -r /
+## set designtopgroup [add_wave_group "Design Top Signals"]
+## set coutputgroup [add_wave_group "C Outputs" -into $designtopgroup]
+## set yp_group [add_wave_group yp(wire) -into $coutputgroup]
+## add_wave /apatb_dda_top/AESL_inst_dda/yp_ap_vld -into $yp_group -color #ffff00 -radix hex
+## add_wave /apatb_dda_top/AESL_inst_dda/yp -into $yp_group -radix hex
+## set xp_group [add_wave_group xp(wire) -into $coutputgroup]
+## add_wave /apatb_dda_top/AESL_inst_dda/xp_ap_vld -into $xp_group -color #ffff00 -radix hex
+## add_wave /apatb_dda_top/AESL_inst_dda/xp -into $xp_group -radix hex
+## set cinputgroup [add_wave_group "C Inputs" -into $designtopgroup]
+## set y1_group [add_wave_group y1(wire) -into $cinputgroup]
+## add_wave /apatb_dda_top/AESL_inst_dda/y1 -into $y1_group -radix hex
+## set x1_group [add_wave_group x1(wire) -into $cinputgroup]
+## add_wave /apatb_dda_top/AESL_inst_dda/x1 -into $x1_group -radix hex
+## set y0_group [add_wave_group y0(wire) -into $cinputgroup]
+## add_wave /apatb_dda_top/AESL_inst_dda/y0 -into $y0_group -radix hex
+## set x0_group [add_wave_group x0(wire) -into $cinputgroup]
+## add_wave /apatb_dda_top/AESL_inst_dda/x0 -into $x0_group -radix hex
+## set blocksiggroup [add_wave_group "Block-level IO Handshake" -into $designtopgroup]
+## add_wave /apatb_dda_top/AESL_inst_dda/ap_start -into $blocksiggroup
+## add_wave /apatb_dda_top/AESL_inst_dda/ap_done -into $blocksiggroup
+## add_wave /apatb_dda_top/AESL_inst_dda/ap_idle -into $blocksiggroup
+## add_wave /apatb_dda_top/AESL_inst_dda/ap_ready -into $blocksiggroup
+## set resetgroup [add_wave_group "Reset" -into $designtopgroup]
+## add_wave /apatb_dda_top/AESL_inst_dda/ap_rst -into $resetgroup
+## set clockgroup [add_wave_group "Clock" -into $designtopgroup]
+## add_wave /apatb_dda_top/AESL_inst_dda/ap_clk -into $clockgroup
+## set testbenchgroup [add_wave_group "Test Bench Signals"]
+## set tbinternalsiggroup [add_wave_group "Internal Signals" -into $testbenchgroup]
+## set tb_simstatus_group [add_wave_group "Simulation Status" -into $tbinternalsiggroup]
+## set tb_portdepth_group [add_wave_group "Port Depth" -into $tbinternalsiggroup]
+## add_wave /apatb_dda_top/AUTOTB_TRANSACTION_NUM -into $tb_simstatus_group -radix hex
+## add_wave /apatb_dda_top/ready_cnt -into $tb_simstatus_group -radix hex
+## add_wave /apatb_dda_top/done_cnt -into $tb_simstatus_group -radix hex
+## add_wave /apatb_dda_top/LENGTH_x0 -into $tb_portdepth_group -radix hex
+## add_wave /apatb_dda_top/LENGTH_y0 -into $tb_portdepth_group -radix hex
+## add_wave /apatb_dda_top/LENGTH_x1 -into $tb_portdepth_group -radix hex
+## add_wave /apatb_dda_top/LENGTH_y1 -into $tb_portdepth_group -radix hex
+## add_wave /apatb_dda_top/LENGTH_xp -into $tb_portdepth_group -radix hex
+## add_wave /apatb_dda_top/LENGTH_yp -into $tb_portdepth_group -radix hex
+## set tbcoutputgroup [add_wave_group "C Outputs" -into $testbenchgroup]
+## set tb_yp_group [add_wave_group yp(wire) -into $tbcoutputgroup]
+## add_wave /apatb_dda_top/yp_ap_vld -into $tb_yp_group -color #ffff00 -radix hex
+## add_wave /apatb_dda_top/yp -into $tb_yp_group -radix hex
+## set tb_xp_group [add_wave_group xp(wire) -into $tbcoutputgroup]
+## add_wave /apatb_dda_top/xp_ap_vld -into $tb_xp_group -color #ffff00 -radix hex
+## add_wave /apatb_dda_top/xp -into $tb_xp_group -radix hex
+## set tbcinputgroup [add_wave_group "C Inputs" -into $testbenchgroup]
+## set tb_y1_group [add_wave_group y1(wire) -into $tbcinputgroup]
+## add_wave /apatb_dda_top/y1 -into $tb_y1_group -radix hex
+## set tb_x1_group [add_wave_group x1(wire) -into $tbcinputgroup]
+## add_wave /apatb_dda_top/x1 -into $tb_x1_group -radix hex
+## set tb_y0_group [add_wave_group y0(wire) -into $tbcinputgroup]
+## add_wave /apatb_dda_top/y0 -into $tb_y0_group -radix hex
+## set tb_x0_group [add_wave_group x0(wire) -into $tbcinputgroup]
+## add_wave /apatb_dda_top/x0 -into $tb_x0_group -radix hex
+## save_wave_config dda.wcfg
+## run all
+Note: 
+******************************************************
+  renorm_and_round_logic.vhd :
+    FULL_MANT_RND1_DEL is using fast_input
+    which will be faster, but create more FFs.
+******************************************************
+Time: 0 ps  Iteration: 0
+Note: 
+******************************************************
+  renorm_and_round_logic.vhd :
+    FULL_MANT_RND1_DEL is using fast_input
+    which will be faster, but create more FFs.
+******************************************************
+Time: 0 ps  Iteration: 0
+Warning: OPMODE Input Warning : The OPMODE 001XXXX with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 100010 ps  Iteration: 0  Process: /apatb_dda_top/AESL_inst_dda/dda_dadd_64ns_64ng8j_U13/dda_ap_dadd_4_full_dsp_64_u/U0/i_synth/addsub_op/ADDSUB/speed_op/logic/OP/ALIGN_BLK/FRAC_ADDSUB/dsp_add/FRAC_ADDSUB/dsp48e1_add/DSP48E1_ADD/DSP/prcs_opmode_drc  File: /opt/Xilinx/Vivado/2018.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 001XXXX with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 100010 ps  Iteration: 0  Process: /apatb_dda_top/AESL_inst_dda/dda_dadd_64ns_64ng8j_U12/dda_ap_dadd_4_full_dsp_64_u/U0/i_synth/addsub_op/ADDSUB/speed_op/logic/OP/ALIGN_BLK/FRAC_ADDSUB/dsp_add/FRAC_ADDSUB/dsp48e1_add/DSP48E1_ADD/DSP/prcs_opmode_drc  File: /opt/Xilinx/Vivado/2018.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 100010 ps  Iteration: 0  Process: /apatb_dda_top/AESL_inst_dda/dda_fadd_32ns_32nbkb_U2/dda_ap_fadd_3_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/speed_op/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /opt/Xilinx/Vivado/2018.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 100010 ps  Iteration: 0  Process: /apatb_dda_top/AESL_inst_dda/dda_fadd_32ns_32nbkb_U1/dda_ap_fadd_3_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/speed_op/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /opt/Xilinx/Vivado/2018.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [n/a] @ "125000"
+Warning: OPMODE Input Warning : The OPMODE 001XXXX with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 365 ns  Iteration: 14  Process: /apatb_dda_top/AESL_inst_dda/dda_dadd_64ns_64ng8j_U13/dda_ap_dadd_4_full_dsp_64_u/U0/i_synth/addsub_op/ADDSUB/speed_op/logic/OP/ALIGN_BLK/FRAC_ADDSUB/dsp_add/FRAC_ADDSUB/dsp48e1_add/DSP48E1_ADD/DSP/prcs_opmode_drc  File: /opt/Xilinx/Vivado/2018.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 001XXXX with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 445 ns  Iteration: 14  Process: /apatb_dda_top/AESL_inst_dda/dda_dadd_64ns_64ng8j_U12/dda_ap_dadd_4_full_dsp_64_u/U0/i_synth/addsub_op/ADDSUB/speed_op/logic/OP/ALIGN_BLK/FRAC_ADDSUB/dsp_add/FRAC_ADDSUB/dsp48e1_add/DSP48E1_ADD/DSP/prcs_opmode_drc  File: /opt/Xilinx/Vivado/2018.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 001XXXX with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 455 ns  Iteration: 14  Process: /apatb_dda_top/AESL_inst_dda/dda_dadd_64ns_64ng8j_U12/dda_ap_dadd_4_full_dsp_64_u/U0/i_synth/addsub_op/ADDSUB/speed_op/logic/OP/ALIGN_BLK/FRAC_ADDSUB/dsp_add/FRAC_ADDSUB/dsp48e1_add/DSP48E1_ADD/DSP/prcs_opmode_drc  File: /opt/Xilinx/Vivado/2018.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 001XXXX with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 455 ns  Iteration: 14  Process: /apatb_dda_top/AESL_inst_dda/dda_dadd_64ns_64ng8j_U13/dda_ap_dadd_4_full_dsp_64_u/U0/i_synth/addsub_op/ADDSUB/speed_op/logic/OP/ALIGN_BLK/FRAC_ADDSUB/dsp_add/FRAC_ADDSUB/dsp48e1_add/DSP48E1_ADD/DSP/prcs_opmode_drc  File: /opt/Xilinx/Vivado/2018.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 001XXXX with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 545 ns  Iteration: 14  Process: /apatb_dda_top/AESL_inst_dda/dda_dadd_64ns_64ng8j_U12/dda_ap_dadd_4_full_dsp_64_u/U0/i_synth/addsub_op/ADDSUB/speed_op/logic/OP/ALIGN_BLK/FRAC_ADDSUB/dsp_add/FRAC_ADDSUB/dsp48e1_add/DSP48E1_ADD/DSP/prcs_opmode_drc  File: /opt/Xilinx/Vivado/2018.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 001XXXX with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 545 ns  Iteration: 14  Process: /apatb_dda_top/AESL_inst_dda/dda_dadd_64ns_64ng8j_U13/dda_ap_dadd_4_full_dsp_64_u/U0/i_synth/addsub_op/ADDSUB/speed_op/logic/OP/ALIGN_BLK/FRAC_ADDSUB/dsp_add/FRAC_ADDSUB/dsp48e1_add/DSP48E1_ADD/DSP/prcs_opmode_drc  File: /opt/Xilinx/Vivado/2018.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 001XXXX with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 635 ns  Iteration: 14  Process: /apatb_dda_top/AESL_inst_dda/dda_dadd_64ns_64ng8j_U12/dda_ap_dadd_4_full_dsp_64_u/U0/i_synth/addsub_op/ADDSUB/speed_op/logic/OP/ALIGN_BLK/FRAC_ADDSUB/dsp_add/FRAC_ADDSUB/dsp48e1_add/DSP48E1_ADD/DSP/prcs_opmode_drc  File: /opt/Xilinx/Vivado/2018.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 001XXXX with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 635 ns  Iteration: 14  Process: /apatb_dda_top/AESL_inst_dda/dda_dadd_64ns_64ng8j_U13/dda_ap_dadd_4_full_dsp_64_u/U0/i_synth/addsub_op/ADDSUB/speed_op/logic/OP/ALIGN_BLK/FRAC_ADDSUB/dsp_add/FRAC_ADDSUB/dsp48e1_add/DSP48E1_ADD/DSP/prcs_opmode_drc  File: /opt/Xilinx/Vivado/2018.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 001XXXX with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 725 ns  Iteration: 14  Process: /apatb_dda_top/AESL_inst_dda/dda_dadd_64ns_64ng8j_U12/dda_ap_dadd_4_full_dsp_64_u/U0/i_synth/addsub_op/ADDSUB/speed_op/logic/OP/ALIGN_BLK/FRAC_ADDSUB/dsp_add/FRAC_ADDSUB/dsp48e1_add/DSP48E1_ADD/DSP/prcs_opmode_drc  File: /opt/Xilinx/Vivado/2018.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 001XXXX with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 725 ns  Iteration: 14  Process: /apatb_dda_top/AESL_inst_dda/dda_dadd_64ns_64ng8j_U13/dda_ap_dadd_4_full_dsp_64_u/U0/i_synth/addsub_op/ADDSUB/speed_op/logic/OP/ALIGN_BLK/FRAC_ADDSUB/dsp_add/FRAC_ADDSUB/dsp48e1_add/DSP48E1_ADD/DSP/prcs_opmode_drc  File: /opt/Xilinx/Vivado/2018.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 001XXXX with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 815 ns  Iteration: 14  Process: /apatb_dda_top/AESL_inst_dda/dda_dadd_64ns_64ng8j_U12/dda_ap_dadd_4_full_dsp_64_u/U0/i_synth/addsub_op/ADDSUB/speed_op/logic/OP/ALIGN_BLK/FRAC_ADDSUB/dsp_add/FRAC_ADDSUB/dsp48e1_add/DSP48E1_ADD/DSP/prcs_opmode_drc  File: /opt/Xilinx/Vivado/2018.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 001XXXX with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 815 ns  Iteration: 14  Process: /apatb_dda_top/AESL_inst_dda/dda_dadd_64ns_64ng8j_U13/dda_ap_dadd_4_full_dsp_64_u/U0/i_synth/addsub_op/ADDSUB/speed_op/logic/OP/ALIGN_BLK/FRAC_ADDSUB/dsp_add/FRAC_ADDSUB/dsp48e1_add/DSP48E1_ADD/DSP/prcs_opmode_drc  File: /opt/Xilinx/Vivado/2018.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 001XXXX with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 905 ns  Iteration: 14  Process: /apatb_dda_top/AESL_inst_dda/dda_dadd_64ns_64ng8j_U12/dda_ap_dadd_4_full_dsp_64_u/U0/i_synth/addsub_op/ADDSUB/speed_op/logic/OP/ALIGN_BLK/FRAC_ADDSUB/dsp_add/FRAC_ADDSUB/dsp48e1_add/DSP48E1_ADD/DSP/prcs_opmode_drc  File: /opt/Xilinx/Vivado/2018.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 001XXXX with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 905 ns  Iteration: 14  Process: /apatb_dda_top/AESL_inst_dda/dda_dadd_64ns_64ng8j_U13/dda_ap_dadd_4_full_dsp_64_u/U0/i_synth/addsub_op/ADDSUB/speed_op/logic/OP/ALIGN_BLK/FRAC_ADDSUB/dsp_add/FRAC_ADDSUB/dsp48e1_add/DSP48E1_ADD/DSP/prcs_opmode_drc  File: /opt/Xilinx/Vivado/2018.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 001XXXX with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 995 ns  Iteration: 14  Process: /apatb_dda_top/AESL_inst_dda/dda_dadd_64ns_64ng8j_U12/dda_ap_dadd_4_full_dsp_64_u/U0/i_synth/addsub_op/ADDSUB/speed_op/logic/OP/ALIGN_BLK/FRAC_ADDSUB/dsp_add/FRAC_ADDSUB/dsp48e1_add/DSP48E1_ADD/DSP/prcs_opmode_drc  File: /opt/Xilinx/Vivado/2018.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 001XXXX with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 995 ns  Iteration: 14  Process: /apatb_dda_top/AESL_inst_dda/dda_dadd_64ns_64ng8j_U13/dda_ap_dadd_4_full_dsp_64_u/U0/i_synth/addsub_op/ADDSUB/speed_op/logic/OP/ALIGN_BLK/FRAC_ADDSUB/dsp_add/FRAC_ADDSUB/dsp48e1_add/DSP48E1_ADD/DSP/prcs_opmode_drc  File: /opt/Xilinx/Vivado/2018.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 001XXXX with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 1085 ns  Iteration: 14  Process: /apatb_dda_top/AESL_inst_dda/dda_dadd_64ns_64ng8j_U12/dda_ap_dadd_4_full_dsp_64_u/U0/i_synth/addsub_op/ADDSUB/speed_op/logic/OP/ALIGN_BLK/FRAC_ADDSUB/dsp_add/FRAC_ADDSUB/dsp48e1_add/DSP48E1_ADD/DSP/prcs_opmode_drc  File: /opt/Xilinx/Vivado/2018.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 001XXXX with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 1085 ns  Iteration: 14  Process: /apatb_dda_top/AESL_inst_dda/dda_dadd_64ns_64ng8j_U13/dda_ap_dadd_4_full_dsp_64_u/U0/i_synth/addsub_op/ADDSUB/speed_op/logic/OP/ALIGN_BLK/FRAC_ADDSUB/dsp_add/FRAC_ADDSUB/dsp48e1_add/DSP48E1_ADD/DSP/prcs_opmode_drc  File: /opt/Xilinx/Vivado/2018.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+// RTL Simulation : 1 / 1 [n/a] @ "1145000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 1185 ns : File "/home/herreral/Code/SystemC/HLSLinearGPU/HLS/LineAlgorithms/lineAlgorithms/dda/sim/verilog/dda.autotb.v" Line 525
+## quit
+INFO: [Common 17-206] Exiting xsim at Wed Aug 22 22:24:05 2018...

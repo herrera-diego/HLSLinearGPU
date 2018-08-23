@@ -1,0 +1,7 @@
+Running: xsim.dir/dda/xsimk -simmode gui -wdb dda.wdb -simrunnum 0 -socket 35039
+Design successfully loaded
+Design Loading Memory Usage: 55236 KB (Peak: 55236 KB)
+Design Loading CPU Usage: 70 ms
+Simulation completed
+Simulation Memory Usage: 153388 KB (Peak: 202508 KB)
+Simulation CPU Usage: 200 ms

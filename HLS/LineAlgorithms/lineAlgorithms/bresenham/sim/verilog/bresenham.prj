@@ -1,0 +1,4 @@
+sv work "glbl.v"
+sv xil_defaultlib "bresenham.v"
+sv xil_defaultlib "bresenham.autotb.v"
+

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="lineAlgorithms.cpp" path="/home/herreral/Code/SystemC/HLSLinearGPU/Cpp/src/lineAlgorithms.cpp"/>
+    <originFiles name="lineAlgorithms.cpp" path="/home/herreral/Code/SystemC/HLSLinearGPU/Cpp/src/lineAlgorithms.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="test_top.cpp" path="/home/herreral/Code/SystemC/HLSLinearGPU/Cpp/src/test_top.cpp"/>
+    <originFiles name="test_top.cpp" path="/home/herreral/Code/SystemC/HLSLinearGPU/Cpp/src/test_top.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

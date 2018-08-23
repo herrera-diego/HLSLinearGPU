@@ -1,0 +1,7 @@
+Running: xsim.dir/midpoint/xsimk -simmode gui -wdb midpoint.wdb -simrunnum 0 -socket 53533
+Design successfully loaded
+Design Loading Memory Usage: 43280 KB (Peak: 43280 KB)
+Design Loading CPU Usage: 10 ms
+Simulation completed
+Simulation Memory Usage: 137572 KB (Peak: 190552 KB)
+Simulation CPU Usage: 20 ms

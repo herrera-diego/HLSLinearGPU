@@ -1,0 +1,26 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Wed Aug 22 22:10:58 2018
+# Process ID: 31418
+# Current directory: /home/herreral/Code/SystemC/HLSLinearGPU/HLS/LineAlgorithms/lineAlgorithms/hls/sim/verilog
+# Command line: vivado -source open_wave.tcl
+# Log file: /home/herreral/Code/SystemC/HLSLinearGPU/HLS/LineAlgorithms/lineAlgorithms/hls/sim/verilog/vivado.log
+# Journal file: /home/herreral/Code/SystemC/HLSLinearGPU/HLS/LineAlgorithms/lineAlgorithms/hls/sim/verilog/vivado.jou
+#-----------------------------------------------------------
+start_gui
+source open_wave.tcl
+# current_fileset
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+current_fileset: Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 6101.562 ; gain = 71.555 ; free physical = 491 ; free virtual = 3715
+# open_wave_database midpoint.wdb
+open_wave_config /home/herreral/Code/SystemC/HLSLinearGPU/HLS/LineAlgorithms/lineAlgorithms/hls/sim/verilog/midpoint.wcfg
+save_wave_config {/home/herreral/Code/SystemC/HLSLinearGPU/HLS/LineAlgorithms/lineAlgorithms/hls/sim/verilog/midpoint.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_project
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Aug 22 22:28:23 2018...
