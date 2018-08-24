@@ -30,6 +30,7 @@
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.2/include"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.2/lnx64/tools/systemc/include"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.2/include/ap_sysc"/>
+									<listOptionValue builtIn="false" value="/home/herreral/Code/SystemC/HLSLinearGPU/HLS/LineAlgorithms"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.preprocessor.def.898585899" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="AESL_TB"/>
@@ -47,6 +48,7 @@
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.2/include"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.2/lnx64/tools/systemc/include"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.2/include/ap_sysc"/>
+									<listOptionValue builtIn="false" value="/home/herreral/Code/SystemC/HLSLinearGPU/HLS/LineAlgorithms"/>
 								</option>
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.351925843" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="AESL_TB"/>
@@ -78,6 +80,21 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.189276077.1692356023" name="test_top.cpp" rcbsApplicability="disable" resourcePath="testbench/test_top.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.456520292.1701554864">
+						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.456520292.1701554864" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.456520292">
+							<option id="gnu.cpp.compiler.option.preprocessor.def.107970475" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def"/>
+							<option id="gnu.cpp.compiler.option.include.paths.479671679" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.2/lnx64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.2/include/etc"/>
+								<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.2/include"/>
+								<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.2/lnx64/tools/systemc/include"/>
+								<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.2/include/ap_sysc"/>
+								<listOptionValue builtIn="false" value="/home/herreral/Code/SystemC/HLSLinearGPU/HLS/LineAlgorithms"/>
+							</option>
+							<option id="gnu.cpp.compiler.option.other.other.1894505557" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-Wno-unknown-pragmas -c -fmessage-length=0" valueType="string"/>
+							<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1736750354" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+						</tool>
+					</fileInfo>
 					<sourceEntries>
 						<entry excluding="bresenham|dda|midpoint|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
@@ -114,6 +131,7 @@
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.2/include"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.2/lnx64/tools/systemc/include"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.2/include/ap_sysc"/>
+									<listOptionValue builtIn="false" value="/home/herreral/Code/SystemC/HLSLinearGPU/HLS/LineAlgorithms"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1548499647" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
@@ -126,6 +144,7 @@
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.2/include"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.2/lnx64/tools/systemc/include"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.2/include/ap_sysc"/>
+									<listOptionValue builtIn="false" value="/home/herreral/Code/SystemC/HLSLinearGPU/HLS/LineAlgorithms"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.549868557" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
@@ -152,6 +171,21 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.1670486608.1526356088" name="test_top.cpp" rcbsApplicability="disable" resourcePath="testbench/test_top.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.2044462485.2146977525">
+						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.2044462485.2146977525" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.2044462485">
+							<option id="gnu.cpp.compiler.option.preprocessor.def.474591852" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def"/>
+							<option id="gnu.cpp.compiler.option.include.paths.1697407798" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.2/lnx64/tools/auto_cc/include"/>
+								<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.2/include/etc"/>
+								<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.2/include"/>
+								<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.2/lnx64/tools/systemc/include"/>
+								<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.2/include/ap_sysc"/>
+								<listOptionValue builtIn="false" value="/home/herreral/Code/SystemC/HLSLinearGPU/HLS/LineAlgorithms"/>
+							</option>
+							<option id="gnu.cpp.compiler.option.other.other.571454718" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-Wno-unknown-pragmas -c -fmessage-length=0" valueType="string"/>
+							<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1387271139" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+						</tool>
+					</fileInfo>
 					<sourceEntries>
 						<entry excluding="bresenham|dda|midpoint|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>

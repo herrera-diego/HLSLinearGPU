@@ -37,7 +37,9 @@ void midpoint(int x0, int y0, int x1, int y1, int *xp, int *yp)
     // Plot initial given point
     // putpixel(x,y) can be used to print pixel
     // of line in graphics
-    std::cout << x << "," << y << "\n";
+    xp[xi] = x;
+    yp[yi] = y;
+    putPixel(xp[xi], yp[yi]);
 
     // iterate through value of X
     while (x < x1)
@@ -140,6 +142,22 @@ int abs (int n)
 void putPixel(int x, int y)
 {
 	std::cout << x << "," << y << std::endl;
+
+	FILE *f = fopen("Data.dat", "a");
+	if (f == NULL)
+	{
+	    printf("Error opening file!\n");
+	}
+	else
+	{
+		int i = 1;
+		float py = 3.1415927;
+		fprintf(f, "%d,%d\n", x, y);
+
+		fclose(f);
+	}
+
+
 }
 
 

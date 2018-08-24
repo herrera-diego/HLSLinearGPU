@@ -15,8 +15,9 @@
 #ifndef __LINE_ALGORITHMS__
 #define __LINE_ALGORITHMS__
 
-#include "stdio.h"
 #include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
 
 void dda(int x0, int y0, int x1, int y1, int *x, int *y);
 void bresenham(int x0, int y0, int x1, int y1, int *x, int *y);       

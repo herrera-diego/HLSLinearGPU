@@ -1,8 +1,6 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
-   Compiling ../../../../../../Cpp/src/test_top.cpp in debug mode
-   Compiling ../../../../../../Cpp/src/lineAlgorithms.cpp in debug mode
-   Generating csim.exe
+make: 'csim.exe' is up to date.
 TEST BENCH
 Mid Point Start
 0,5
@@ -34,6 +32,7 @@ Bresenham Start
 6,6
 7,6
 8,6
+Test passed !
 DONE!
 INFO: [SIM 1] CSim done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************

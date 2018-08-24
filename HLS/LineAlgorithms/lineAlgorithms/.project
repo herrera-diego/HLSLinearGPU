@@ -57,6 +57,11 @@
 			<location>/home/herreral/Code/SystemC/HLSLinearGPU/Cpp/src/lineAlgorithms.cpp</location>
 		</link>
 		<link>
+			<name>testbench/Gold.dat</name>
+			<type>1</type>
+			<location>/home/herreral/Code/SystemC/HLSLinearGPU/Cpp/Gold.dat</location>
+		</link>
+		<link>
 			<name>testbench/test_top.cpp</name>
 			<type>1</type>
 			<location>/home/herreral/Code/SystemC/HLSLinearGPU/Cpp/src/test_top.cpp</location>
